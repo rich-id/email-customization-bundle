@@ -3,3 +3,9 @@ services:
         autoconfigure: true
         autowire: true
         public: true
+
+    RichId\EmailCustomizationBundle\Domain\UseCase\GetEmailFooter: ~
+
+    RichId\EmailCustomizationBundle\Tests\Resources\Fixtures\EmailConfigurationFixtures: ~
+    RichId\EmailCustomizationBundle\Tests\Resources\Fixtures\DummyUserFixtures: ~
+    RichId\EmailCustomizationBundle\Tests\Resources\Stubs\GetEmailFooterStub: ~

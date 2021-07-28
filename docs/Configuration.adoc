@@ -1,0 +1,14 @@
+== Configuration
+
+Here is a sample of configuration:
+
+[source,yaml]
+----
+rich_id_email_customization:
+    admin_roles: [ ROLE_ADMIN ]
+    automatic_add_footer_enabled: true
+----
+
+- `rich_id_email_customization.admin_roles`: Defines the roles that are allowed to manage design.
+- `rich_id_email_customization.automatic_add_footer_enabled`: Enable the automatic addition of a footer to all emails. Default value : `false`
+

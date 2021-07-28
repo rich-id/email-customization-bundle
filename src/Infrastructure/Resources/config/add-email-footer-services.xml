@@ -6,6 +6,9 @@
 
     <services>
         <defaults autowire="true" autoconfigure="true" public="false"/>
-        <!-- Your Symfony Services -->
+
+        <service id="RichId\EmailCustomizationBundle\Infrastructure\Listener\AddFooterBeforeSendPerformedListener" >
+            <tag name="swiftmailer.default.plugin" priority="-1"/>
+        </service>
     </services>
 </container>

@@ -1,0 +1,6 @@
+{% set configurations = getEmailConfigurations('footer')|sort((a, b) => a.position <=> b.position) %}
+
+{% for configuration in configurations %}
+    <br />
+    {{ configuration.valueToUse|trans }}<br />
+{% endfor %}
