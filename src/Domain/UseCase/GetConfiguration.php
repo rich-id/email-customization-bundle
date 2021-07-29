@@ -6,21 +6,21 @@ namespace RichId\EmailCustomizationBundle\Domain\UseCase;
 
 use RichId\EmailCustomizationBundle\Domain\Entity\EmailConfiguration;
 use RichId\EmailCustomizationBundle\Domain\Exception\NotFoundEmailConfigurationException;
-use RichId\EmailCustomizationBundle\Domain\Port\GetEntityInterface;
+use RichId\EmailCustomizationBundle\Domain\Port\ConfigurationRepositoryInterface;
 
 class GetConfiguration
 {
-    /** @var GetEntityInterface */
-    protected $getEntity;
+    /** @var ConfigurationRepositoryInterface */
+    protected $configurationRepository;
 
-    public function __construct(GetEntityInterface $getEntity)
+    public function __construct(ConfigurationRepositoryInterface $configurationRepository)
     {
-        $this->getEntity = $getEntity;
+        $this->configurationRepository = $configurationRepository;
     }
 
     public function __invoke(string $configurationSlug): EmailConfiguration
     {
-        $configuration = $this->getEntity->getEmailConfiguration($configurationSlug);
+        $configuration = $this->configurationRepository->getEmailConfiguration($configurationSlug);
 
         if (!$configuration instanceof EmailConfiguration) {
             throw new NotFoundEmailConfigurationException($configurationSlug);

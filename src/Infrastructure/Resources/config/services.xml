@@ -7,7 +7,7 @@
     <services>
         <defaults autowire="true" autoconfigure="true" public="false"/>
 
-        <service id="RichId\EmailCustomizationBundle\Domain\Port\GetEntityInterface" alias="RichId\EmailCustomizationBundle\Infrastructure\Adapter\GetEntity"/>
+        <service id="RichId\EmailCustomizationBundle\Domain\Port\ConfigurationRepositoryInterface" alias="RichId\EmailCustomizationBundle\Infrastructure\Adapter\ConfigurationRepository"/>
         <service id="RichId\EmailCustomizationBundle\Domain\Port\TemplatingInterface" alias="RichId\EmailCustomizationBundle\Infrastructure\Adapter\Templating"/>
 
         <service id="RichId\EmailCustomizationBundle\Domain\UseCase\GetConfiguration" />
@@ -15,7 +15,7 @@
         <service id="RichId\EmailCustomizationBundle\Domain\UseCase\GetConfigurationValue" />
         <service id="RichId\EmailCustomizationBundle\Domain\UseCase\GetEmailFooter" />
 
-        <service id="RichId\EmailCustomizationBundle\Infrastructure\Adapter\GetEntity" />
+        <service id="RichId\EmailCustomizationBundle\Infrastructure\Adapter\ConfigurationRepository" />
         <service id="RichId\EmailCustomizationBundle\Infrastructure\Adapter\Templating" />
 
         <service id="RichId\EmailCustomizationBundle\Infrastructure\Cache\EmailConfigurationCache" />

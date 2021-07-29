@@ -5,16 +5,16 @@ declare(strict_types=1);
 namespace RichId\EmailCustomizationBundle\Domain\UseCase;
 
 use RichId\EmailCustomizationBundle\Domain\Entity\EmailConfiguration;
-use RichId\EmailCustomizationBundle\Domain\Port\GetEntityInterface;
+use RichId\EmailCustomizationBundle\Domain\Port\ConfigurationRepositoryInterface;
 
 class GetConfigurations
 {
-    /** @var GetEntityInterface */
-    protected $getEntity;
+    /** @var ConfigurationRepositoryInterface */
+    protected $configurationRepository;
 
-    public function __construct(GetEntityInterface $getEntity)
+    public function __construct(ConfigurationRepositoryInterface $configurationRepository)
     {
-        $this->getEntity = $getEntity;
+        $this->configurationRepository = $configurationRepository;
     }
 
     /**
@@ -25,7 +25,7 @@ class GetConfigurations
     public function __invoke($types = []): array
     {
         $types = (array) $types;
-        $configurations = $this->getEntity->getEmailConfigurations();
+        $configurations = $this->configurationRepository->getEmailConfigurations();
 
         if (empty($types)) {
             return $configurations;
