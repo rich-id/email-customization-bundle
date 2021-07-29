@@ -6,7 +6,7 @@ namespace RichId\EmailCustomizationBundle\Domain\Port;
 
 use RichId\EmailCustomizationBundle\Domain\Entity\EmailConfiguration;
 
-interface GetEntityInterface
+interface ConfigurationRepositoryInterface
 {
     public function getEmailConfiguration(string $configurationSlug): ?EmailConfiguration;
 

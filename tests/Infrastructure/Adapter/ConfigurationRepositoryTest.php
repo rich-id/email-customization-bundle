@@ -7,15 +7,15 @@ namespace RichId\EmailCustomizationBundle\Tests\Infrastructure\Adapter;
 use RichCongress\TestFramework\TestConfiguration\Annotation\TestConfig;
 use RichCongress\TestSuite\TestCase\TestCase;
 use RichId\EmailCustomizationBundle\Domain\Entity\EmailConfiguration;
-use RichId\EmailCustomizationBundle\Infrastructure\Adapter\GetEntity;
+use RichId\EmailCustomizationBundle\Infrastructure\Adapter\ConfigurationRepository;
 
 /**
- * @covers \RichId\EmailCustomizationBundle\Infrastructure\Adapter\GetEntity
+ * @covers \RichId\EmailCustomizationBundle\Infrastructure\Adapter\ConfigurationRepository
  * @TestConfig("fixtures")
  */
-final class GetEntityTest extends TestCase
+final class ConfigurationRepositoryTest extends TestCase
 {
-    /** @var GetEntity */
+    /** @var ConfigurationRepository */
     public $adapter;
 
     public function testGetEmailConfigurationConfigurationNotFound(): void

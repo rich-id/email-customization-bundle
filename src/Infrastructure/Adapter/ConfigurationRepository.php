@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace RichId\EmailCustomizationBundle\Infrastructure\Adapter;
 
 use RichId\EmailCustomizationBundle\Domain\Entity\EmailConfiguration;
-use RichId\EmailCustomizationBundle\Domain\Port\GetEntityInterface;
+use RichId\EmailCustomizationBundle\Domain\Port\ConfigurationRepositoryInterface;
 use RichId\EmailCustomizationBundle\Infrastructure\Cache\EmailConfigurationCache;
 
-class GetEntity implements GetEntityInterface
+class ConfigurationRepository implements ConfigurationRepositoryInterface
 {
     /** @var EmailConfigurationCache */
     protected $emailConfigurationCache;
