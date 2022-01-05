@@ -21,7 +21,7 @@ class AddFooterBeforeSendPerformedListener implements \Swift_Events_SendListener
         $message = $event->getMessage();
         $footer = ($this->getEmailFooter)();
 
-        if ($footer === '') {
+        if ($footer === '' || $message->getBody() === null || \substr($message->getBody(), -\strlen($footer)) === (string) $footer) {
             return;
         }
 
