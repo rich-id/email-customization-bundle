@@ -23,7 +23,7 @@ class AddFooterBeforeSendPerformedListener implements \Swift_Events_SendListener
 
         $foundedFooter = \substr($message->getBody(), -\strlen($footer));
 
-        if ($footer === '' || $message->getBody() === null || !$foundedFooter || $foundedFooter === (string) $footer) {
+        if ($footer === '' || $message->getBody() === null || $foundedFooter === false || $foundedFooter === (string) $footer) {
             return;
         }
 
