@@ -46,7 +46,7 @@ final class EmailConfigurationFixtures extends AbstractFixture
                 'name'         => 'No reply',
                 'type'         => EmailConfigurationType::FOOTER,
                 'position'     => 3,
-                'defaultValue' => 'Please do not reply to this email.',
+                'defaultValue' => '<small>Please do not reply to this email.</small>',
                 'dateUpdate'   => new \DateTime(),
             ]
         );

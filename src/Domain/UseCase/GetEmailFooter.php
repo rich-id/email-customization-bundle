@@ -18,6 +18,10 @@ class GetEmailFooter
 
     public function __invoke(): string
     {
-        return \trim($this->templating->render('@RichIdEmailCustomization/email-footer.html.twig'));
+        return \htmlspecialchars_decode(
+            \trim(
+                $this->templating->render('@RichIdEmailCustomization/email-footer.html.twig')
+            )
+        );
     }
 }

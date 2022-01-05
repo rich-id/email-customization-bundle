@@ -23,6 +23,6 @@ final class GetEmailFooterTest extends TestCase
 
         $this->assertStringContainsString('With kindest regards<br />', $footer);
         $this->assertStringContainsString('The test team<br />', $footer);
-        $this->assertStringContainsString('Please do not reply to this email.<br />', $footer);
+        $this->assertStringContainsString('<small>Please do not reply to this email.</small><br />', $footer);
     }
 }
