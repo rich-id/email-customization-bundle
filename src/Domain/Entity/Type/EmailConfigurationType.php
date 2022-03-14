@@ -12,7 +12,7 @@ class EmailConfigurationType extends AbstractEnumType
     public const FOOTER = 'footer';
 
     /** @var array<string, string> */
-    protected static $choices = [
+    protected static array $choices = [
         self::FOOTER => 'footer',
     ];
 }
