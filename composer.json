@@ -61,11 +61,11 @@
     "extra": {
         "hooks": {
             "pre-commit": [
-                "./vendor/bin/php-cs-fixer fix"
+                "docker-compose exec -T application ./vendor/bin/php-cs-fixer fix"
             ],
             "pre-push": [
-                "./vendor/bin/php-cs-fixer fix --dry-run",
-                "./vendor/bin/static_analysis"
+                "docker-compose exec -T application ./vendor/bin/php-cs-fixer fix --dry-run",
+                "docker-compose exec -T application ./vendor/bin/static_analysis"
             ]
         }
     }
