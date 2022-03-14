@@ -6,7 +6,7 @@ namespace RichId\EmailCustomizationBundle\Domain\Entity\Type;
 
 use Fresh\DoctrineEnumBundle\DBAL\Types\AbstractEnumType;
 
-/** @extends AbstractEnumType<string> */
+/** @extends AbstractEnumType<string, string> */
 class EmailConfigurationType extends AbstractEnumType
 {
     public const FOOTER = 'footer';

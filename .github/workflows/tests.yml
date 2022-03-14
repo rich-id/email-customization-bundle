@@ -27,7 +27,7 @@ jobs:
 
             - name: Execute the tests 🔧
               run: |
-                  docker-compose exec -T application php -d extension=pcov.so ./bin/phpunit --configuration phpunit.xml.dist --colors=never --coverage-text --log-junit reports/junit.xml --coverage-html reports/coverage --coverage-clover build/logs/clover.xml
+                  docker-compose exec -T application php -d extension=pcov.so ./vendor/bin/phpunit --configuration phpunit.xml.dist --colors=never --coverage-text --log-junit reports/junit.xml --coverage-html reports/coverage --coverage-clover build/logs/clover.xml
 
             - name: Upload results to Coveralls 🚀
               env:
@@ -38,8 +38,8 @@ jobs:
 
             - name: PHPInsights 🔧
               run: |
-                  docker-compose exec -T application ./bin/phpinsights
+                  docker-compose exec -T application ./vendor/bin/phpinsights
 
             - name: PHPStan 🔧
               run: |
-                  docker-compose exec -T application ./bin/phpstan
+                  docker-compose exec -T application ./vendor/bin/phpstan

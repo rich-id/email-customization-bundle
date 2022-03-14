@@ -47,7 +47,6 @@
         }
     },
     "config": {
-        "bin-dir": "bin",
         "discard-changes": true,
         "sort-packages": true
     },
@@ -62,11 +61,11 @@
     "extra": {
         "hooks": {
             "pre-commit": [
-                "./bin/php-cs-fixer fix"
+                "./vendor/bin/php-cs-fixer fix"
             ],
             "pre-push": [
-                "./bin/php-cs-fixer fix --dry-run",
-                "./bin/static_analysis"
+                "./vendor/bin/php-cs-fixer fix --dry-run",
+                "./vendor/bin/static_analysis"
             ]
         }
     }
